@@ -1,4 +1,5 @@
 #include<iostream> 
+using namespace std;
 class list{ 
 protected: 
 int arr[10]; 
@@ -31,14 +32,14 @@ class Queue : public list{
 public: 
 void store(int ele){ 
 if(last>=9){ 
-std::cout<<"Queue overflow :("<<std::endl; 
+cout<<"Queue overflow :<<endl; 
 return; 
 } 
 arr[++last]=ele; 
 } 
 int retrieve(){ 
 if(last==-1){ 
-std::cout<<"Queue underflow :("<<std::endl; 
+cout<<"Queue underflow :<<endl; 
 return -1; 
 } 
 int front=arr[0]; 
@@ -59,10 +60,10 @@ Queue queue;
 queue.store(20); 
 queue.store(45); 
 queue.store(7); 
-std::cout<<"Queue front: "<<queue.retrieve()<<std::endl; 
-std::cout<<"Queue front: "<<queue.retrieve()<<std::endl; 
-std::cout<<"Queue front: "<<queue.retrieve()<<std::endl; 
-std::cout<<"Queue after empty: "<<queue.retrieve()<<std::endl; 
+cout<<"Queue front: "<<queue.retrieve()<<endl; 
+cout<<"Queue front: "<<queue.retrieve()<<endl; 
+cout<<"Queue front: "<<queue.retrieve()<<endl; 
+cout<<"Queue after empty: "<<queue.retrieve()<<endl; 
 return 0; 
 } 
 
