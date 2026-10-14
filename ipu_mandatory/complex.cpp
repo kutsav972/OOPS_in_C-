@@ -1,4 +1,5 @@
 #include<iostream> 
+using namespace std;
 class Complex{ 
 float real; 
 float imag; 
@@ -18,7 +19,7 @@ temp.imag = imag + c.imag;
 return temp; 
 } 
 void show(){ 
-std::cout<<real<<" i "<<imag<<std::endl; 
+cout<<real<<" i "<<imag<<endl; 
 } 
 }; 
 int main(){ 
