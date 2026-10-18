@@ -5,30 +5,30 @@ protected:
 int arr[10]; 
 int last = 0; 
 public: 
-list():last(-1){std::cout<<"list class has been constructed !"<<std::endl;} 
+list():last(-1){\cout<<"list class has been constructed !"<<endl;} 
 virtual void store(int ele) = 0; 
 virtual int retrieve() = 0; 
-virtual  ~list() {std::cout<<"List class has been destructed!"<<std::endl;} 
+virtual  ~list()
+{cout<<"List class has been destructed!"<<endl;} 
 }; 
 class Stack : public list{ 
 public: 
 void store(int ele){ 
 if(last>=9){ 
-std::cout<<"Stack overflow :("<<std::endl; 
+std::cout<<"Stack overflow :"<<endl; 
 return; 
 } 
 arr[++last]=ele; 
 } 
 int retrieve(){ 
 if(last==-1){ 
-std::cout<<"Stack underflow :("<<std::endl; 
+cout<<"Stack underflow :("<<endl; 
 return -1;  
 } 
 return arr[last]; 
 } 
 }; 
 class Queue : public list{ 
-// Arr[0] is the front, and last is the rear.  
 public: 
 void store(int ele){ 
 if(last>=9){ 
