@@ -7,21 +7,21 @@ class matrix {
     int **mat; 
 public: 
     matrix(int r, int c) : rows(r), cols(c) { 
-        mat = new int*[rows];              // allocate memory to store pointers to rows 
+        mat = new int*[rows];               
         for (int i = 0; i < rows; i++) 
-            mat[i] = new int[cols]; }       // allocate memory for each row 
+            mat[i] = new int[cols]; }        
     ~matrix() { 
         for (int i = 0; i < rows; i++) 
             delete[] mat[i]; 
         delete[] mat;} 
-    matrix(const matrix& from) { // copy constructor doing deep copy 
+    matrix(const matrix& from) {  
         cout << "(Deep) copy constructor is called" << endl; 
         rows = from.rows; 
         cols = from.cols; 
         mat = new int*[rows]; 
         for (int i = 0; i < rows; i++) 
             mat[i] = new int[cols]; 
-        for (int i = 0; i < rows; i++)                   // Copy matrix values 
+        for (int i = 0; i < rows; i++)                   
             for (int j = 0; j < cols; j++) 
                 mat[i][j] = from.mat[i][j];} 
     void initialize() { 
@@ -37,12 +37,12 @@ line:" << endl;
                 cout << setw(4) << mat[i][j]; 
             cout << endl;} 
 } 
-    matrix multiply(matrix m2) const { // doesn't modify object calling this fn 
+    matrix multiply(matrix m2) const { 
         matrix m3(rows, m2.cols); 
         for (int i = 0; i < rows; i++) { 
             for (int j = 0; j < m2.cols; j++) { 
                 m3.mat[i][j] = 0; 
-                for (int k = 0; k < cols; k++)                                // Multiply row of mat with column of m2 
+                for (int k = 0; k < cols; k++)                                
                     m3.mat[i][j] += mat[i][k] * m2.mat[k][j]; } 
             }; 
         return m3;} 
